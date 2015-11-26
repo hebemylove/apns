@@ -25,6 +25,8 @@ type PushNotificationResponse struct {
 	Success       bool
 	AppleResponse string
 	Error         error
+	Identifier	  int32
+	FaildTokenIdentifier 	  []int32
 }
 
 // NewPushNotificationResponse creates and returns a new PushNotificationResponse

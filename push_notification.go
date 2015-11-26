@@ -89,6 +89,17 @@ func NewPushNotification() (pn *PushNotification) {
 	return
 }
 
+func NewPushNotifications(n int) (pns []*PushNotification) {
+	for i := 0; i < n; i++ {
+		pn := new(PushNotification)
+		pn.payload = make(map[string]interface{})
+		pn.Identifier = int32(i)
+		pn.Priority = 10
+		pns = append(pns, pn)
+	}
+	return
+}
+
 // AddPayload sets the "aps" payload section of the request. It also
 // has a hack described within to deal with specific zero values.
 func (pn *PushNotification) AddPayload(p *Payload) {
